@@ -863,6 +863,19 @@ footer span a:hover {
   line-height: 22px;
   right: 13px;
 }
+.services .serv-content .card i {
+  font-size: 20px;
+}
+.services .serv-content .card .text {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.services .serv-content .card p,
+.services .serv-content .card li { 
+  font-size: 10px;
+}
+
+
 
 
 
@@ -939,4 +952,3 @@ section .title::after {
 
 
 }
-
