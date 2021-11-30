@@ -1,288 +1,942 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <div >
-        <a href="#" class="scroll-up-btn" >
-            <i class="fas fa-angle-up"></i>
-        </a>
-    </div>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/Normaliz.css">
-    <link rel="stylesheet" href="css/profile.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
+:root {
+  --main-color: crimson;
+  --second-color: #fff;
+  --third-color: #111;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+html, body { 
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body  {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+}
+ul {
+  list-style: none;
+}
+.max-width {
+  margin: auto;
+  max-width: 1300px;
+  padding: 0 80px;
+}
 
-<!-- first of all welcome to my world  -->
-<!-- in this template i decided to work on more deferent types of code -->
-<!-- to make myself more felexable on css and html and javascript  -->
+
+/* <!-- first of all welcome to my world  --> */
+/* <!-- in this template i decided to work on more deferent types of code --> */
+/* <!-- to make myself more felexable on css and html and javascript  --> */
+
+/* NavBar Styling  */
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 30px 0;
+  transition: 0.6s;
+  z-index: 999;
+}
+.navbar.active {
+  background-color: var(--main-color);
+  padding: 15px 0;
+}
+.navbar .max-width {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .logo a {
+  color: var(--second-color);
+  font-size: 35px;
+  font-weight: 600;
+}
+.navbar.active .logo a span {
+  color: var(--second-color);
+  transition: 0.3s;
+}
+.navbar .logo span {
+  color: var(--main-color);
+}
+.navbar .menu li {
+  display: inline-block;
+}
+.navbar .menu li a {
+  display: block;
+  color: var(--second-color);
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 20px;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+.navbar .menu li a:hover {
+  color: var(--main-color);
+}
+.navbar.active .menu li a:hover {
+  color: var(--second-color);
+}
+
+/* menu button  */
+
+.menu-btn {
+  color: var(--second-color);
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+.scroll-up-btn { 
+  position: fixed;
+  height: 45px;
+  width: 42px ;
+  background-color: var(--main-color);
+  right: 30px;
+  bottom: 10px ;
+  text-align: center;
+  line-height: 45px ;
+  color: var(--second-color);
+  z-index: 9999;
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 6px ;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s;
+}
+.scroll-up-btn.show { 
+  opacity: 1;
+  bottom: 30px ;
+  pointer-events: auto;
+}
+
+/* home style  */
+
+
+.home {
+  overflow-x: hidden;
+  display: flex;
+  background-image: url(../image/44.jpg);
+  background-size: cover;
+  height: 100vh;
+  color: var(--second-color);
+  min-height: 500px;
+  position: relative;
+}
+.home::before { 
+  content: "";
+  position: absolute;
+  background-color: #000000bf;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.home .max-width {
+  margin: auto 0 auto 40px;
+  text-transform: capitalize;
+  z-index: 888;
+}
+.home .max-width .home-content .text-1 {
+  font-size: 25px;
+}
+.home .max-width .home-content .text-2 {
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+.home .max-width .home-content .text-3 {
+  font-size: 40px;
+  margin: 5px 0;
+}
+.home .max-width .home-content .text-3 span {
+  color: var(--main-color);
+  font-weight: 500;
+}
+.home .max-width .home-content a {
+  display: inline-block;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  font-size: 25px;
+  padding: 12px 36px;
+  border-radius: 6px;
+  border: 2px solid var(--main-color);
+  transition: 0.3s;
+}
+.home .max-width .home-content a:hover {
+  color: var(--main-color);
+  background: none;
+}
+/* similar style  */
+.about,
+.services, .skills, .information , .contact  {
+  font-family: "poppins", sans-serif;
+}
+.about .about-content,
+.services .serv-content, 
+.skills .skills-content, 
+.contact .contact-content   {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section {
+  padding: 100px 0;
+  overflow-x: hidden;
+}
+
+section .title {
+  color: var(--third-color);
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  text-transform: capitalize;
+  text-align: center;
+  display: block;
+  font-family: "ubuntu", sans-serif;
+  position: relative;
+}
+section .title::before {
+  content: "";
+  background-color: var(--third-color);
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+section .title::after {
+  background-color: var(--second-color);
+  color: var(--main-color);
+  position: absolute;
+  bottom: -11px;
+  font-size: 18px;
+  padding: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* about section  */
+.about .title::after {
+  content: "who i am ";
+}
+.about .about-content .left {
+  width: 45%;
+}
+.about .about-content .left img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.about .about-content .right {
+  width: 55%;
+}
+.about .about-content .right .text {
+  color: var(--third-color);
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.about .about-content .right .text span {
+  color: var(--main-color);
+}
+.about .about-content .right .text p {
+  text-align: justify;
+}
+.about .about-content .right a {
+  display: inline-block;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  font-size: 20px;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid var(--main-color);
+  transition: 0.3s;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.about .about-content .right a:hover {
+  color: var(--main-color);
+  background: none;
+}
+
+/* services style  */
+.services, .information  {
+  margin-top: 100px ;
+  background: var(--third-color);
+  color: var(--second-color);
+}
+.services .title, .information .title {
+  color: var(--second-color);
+}
+.services .title::before, .information .title::before {
+  background: var(--second-color);
+}
+.services .title::after {
+  background: var(--third-color);
+  content: "what i provide ";
+}
+.services .serv-content .card {
+  width: calc(33% - 20px);
+  background: #222;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.services .serv-content .card i { 
+  font-size: 50px ;
+  color: var(--main-color);
+  transition: 0.3s;
+}
+.services .serv-content .card .text { 
+  font-size: 25px ;
+  font-weight: 500;
+  margin: 10px 0 7px 0 ;
+}
+.services .serv-content .card .box { 
+  transition: 0.3s;
+}
+.services .serv-content .card:hover { 
+  background-color: var(--main-color);
+}
+.services .serv-content .card:hover .box { 
+  transform: scale(1.05);
+}
+.services .serv-content .card:hover i { 
+  color: var(--second-color);
+}
+/* skills section styling  */
+
+
+.skills .title::after {
+  content: "what i know ";
+}
+.skills .skills-content .column { 
+  width: calc(50% - 30px );
+}
+.skills .skills-content .left .text { 
+  font-size:20px ;
+  font-weight:600 ;
+  margin-bottom: 10px ;
+}
+.skills .skills-content .left  p {
+  text-align: justify ; 
+}
+.skills .skills-content .left  a {
+  display: inline-block;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  font-size: 18px;
+  padding: 8px 16px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid var(--main-color);
+  transition: 0.3s;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.skills .skills-content .left  a:hover {
+  color: var(--main-color);
+  background: none;
+}
+
+.skills .skills-content .right .bars { 
+  margin-bottom: 15px ;
+}
+.skills .skills-content .right .info { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between ;
+  flex-wrap: wrap;
+}
+.skills .skills-content .right span { 
+  font-size: 18px ;
+  font-weight: 500;
+}
+.skills .skills-content .right .line { 
+  height: 5px;
+  width: 100%;
+  background-color: lightgray;
+  position: relative;
+}
+.skills .skills-content .right .line::before { 
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--main-color);
+}
+.skills-content .right .html::before { 
+  width: 90%;
+}
+.skills-content .right .css::before { 
+  width: 60%;
+}
+.skills-content .right .js::before { 
+  width: 80%;
+}
+.skills-content .right .php::before { 
+  width: 50%;
+}
+.skills-content .right .mysql::before { 
+  width: 70%;
+}
+
+/* information section style  */
+
+
+.information .title::after { 
+  background: var(--third-color);
+  content: "who with me ";
+}
+.information  P { 
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.information .image-container { 
+  display: flex;
+  margin-top: 70px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.information .image-container .box-image { 
+  border-radius: 10px;
+  margin: 14px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgb(54, 51, 51);
+  flex-basis: 28.2%;
+  max-width: 376px;
+  height: 326px;
+}
+
+
+.information .image-container .box-image:hover .text { 
+    bottom: 0 ;
+}
+.information .image-container .box-image:hover img { 
+    transform: rotate(4deg) scale(1.5);
+}
+.information .image-container .box-image img { 
+    max-width: 100% ;
+    transition: 0.3s;
+}
+
+.information .image-container .box-image .text { 
+    position: absolute;
+    background-color: black;
+    padding: 20px ;
+    width: 100% ;
+    bottom: -100%  ;
+    transition: 0.3s ;
+}
+.information .image-container .box-image .text h3 { 
+    color: var(--main-color);
+    margin-bottom: 6px;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+.information .image-container .box-image .text p { 
+    color: var(--secondary-color );
+    margin-left: 4px;
+    line-height: 1.4;
+}
+/* contact section style  */
+
+.contact .title::after { 
+  content: "get in touch ";
+}
+
+.contact .contact-content .column { 
+  width: calc(50% - 30px ) ;
+}
+
+.contact .contact-content  .left .text, 
+.contact .contact-content  .right .text { 
+  font-size: 20px ;
+  font-weight: 600 ;
+  margin-bottom: 10px ;
+}
+.contact .contact-content  .left p { 
+  text-align: justify;
+}
+
+.contact .contact-content  .left .icons { 
+  margin: 10px ;
+}
+.contact .contact-content .row { 
+  display: flex;
+  align-items: center;
+  height: 65px ;
+}
+
+.contact .contact-content  .left .info { 
+  margin-left: 30px ;
+}
+.contact .contact-content  .left .row i{ 
+  font-size: 25px;
+  color: var(--main-color);
+}
+.contact .contact-content  .left .row .head { 
+  font-weight: 500;
+}
+.contact .contact-content  .left .row .sub-title { 
+  color: #333;
+}
+
+.contact   .right form .textarea { 
+  height: 80px ;
+  width: 100%;
+
+}
+
+.contact   .right form .fields { 
+  display: flex ;
+}
+.contact   .right form .name { 
+  margin-right: 10px ;
+}
+.contact   .right form .email { 
+  margin-left: 10px ;
+}
+.contact   .right form .field, 
+.contact   .right form .fields .field { 
+  height: 45px ;
+  width: 100% ;
+  margin-bottom: 15px ;
+
+}
+.contact   .right form .field input, 
+.contact   .right form .textarea textarea { 
+  height: 100% ;
+  width: 100% ;
+  border: 1px solid lightgray ;
+  border-radius: 6px ;
+  outline: none;
+  padding: 0 15px ;
+  font-size: 17px ;
+  font-family: 'poppins', sans-serif;
+}
+.contact   .right form .textarea textarea { 
+  padding-top: 10px ;
+  resize:none;
+}
+.contact   .right form .button { 
+  height: 47px;
+  width: 170px;
+}
+.contact   .right form .button button { 
+  height: 100%;
+  width: 100%;
+  border: 2px solid var(--main-color);
+  background-color: var(--main-color);
+  color: var(--second-color) ;
+  font-size:20px  ;
+  font-weight: 500;
+  border-radius: 6px ;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.contact   .right form .button button:hover { 
+  color: var(--main-color);
+  background: none;
+}
+
+/* footer style section */
+
+footer { 
+  background-color: var(--third-color);
+  color: var(--second-color);
+  padding: 20px 23px  ;
+  text-align: center;
+}
+footer span a { 
+  color: var(--main-color);
+  text-decoration: none;
+}
+footer span a:hover { 
+  text-decoration: underline;
+}
+
+/* animation style   */
+
+.typing { 
+  margin-left: 10px ;
+}
+
+.typing::after { 
+  content: "";
+  right: -5px ;
+  width: 1px;
+  height: 3%;
+  border-right: 4px solid var(--main-color) ;
+  animation:  blink 0.5s infinite ease  ;
+}
+
+
+@keyframes blink {
+  0% { 
+    opacity: 0;
+  }
+  100% { 
+    opacity: 1;
+  }
+}
 
 
 
-    <nav class="navbar">
-        <div class="max-width">
-            <div class="logo">
-                <a href="#">Ahmed<span>Tarek.</span></a>
-            </div>
-            <ul class="menu" id="add">
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#services">services</a></li>
-                <li><a href="#skills">skills</a></li>
-                <li><a href="#information">information</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
-    <!-- home section  -->
-    <section class="home" id="home">
-        <div class="max-width">
-            <div class="home-content">
-                <div class="text-1">Hello, my name is </div>
-                <div class="text-2">ahmed tarek</div>
-                <div class="text-3">and i'm a <span class="typing"> developer </span></div>
-                <a href="#">hire me </a>
-            </div>
-        </div>
-    </section>
-    <!-- about section  -->
-    <section class="about" id="about">
-        <div class="max-width">
-            <h2 class="title">about me </h2>
-            <div class="about-content">
-                <div class="column left">
-                    <img src="image/1.jpg" >
-                </div>
-                <div class="column right">
-                    <div class="text">i'm Ahmed and i'm <span class="typing"> developer </span> </div>
-                    <p>My Name Is Ahmed Tarek, I'm An Engineer And Front End Develper Live In Cairo, And Iam Very Passionate And Very Dedicated To My Work. With 1 Year Experience As A Professional Front End Developer, I Have Acquaired The Skills To Design Great Websites
-                    </p>
-                    <a href="#">download cv</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- services section  -->
-    <section class="services" id="services">
-        <div class="max-width">
-            <h2 class="title"> my services </h2>
-            <div class="serv-content">
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-paint-brush"></i>
-                        <div class="text">web design</div>
-                        <p>with Css & Html & javaScript now i make alot of projects to learn more about that work and to be professional,,  with Angular & Firebase i made E-commerce web Apps 
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                            <i class="fas fa-chart-line"></i>
-                            <div class="text">What i learned</div>
-                            <ul>
-                                <li>HTML, CSS, Js</li>
-                                <li>Bootstrap, Jquery</li>
-                                <li>Angular, Firebase </li>
-                                <li></li>
-                            </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                            <i class="fas fa-code"></i>
-                            <div class="text">working to learn</div>
-                            <ul>
-                                <li>UI UX</li>
-                                <li>React</li>
-                                <li>API</li>
-                            </ul>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
 
-<!--       skills section        -->
 
-    <section class="skills" id="skills">
-        <div class="max-width">
-            <h2 class="title">my skills </h2>
-            <div class="skills-content">
-                <div class="column left">
-                    <div class="text"> My creative skills & experiences. </div>
-                    <ul>
-                        <li>(HTML, CSS, JS) projects </li>
-                        <li>i made an e-commerce web app using <br> ( Angular, Firebase, Bootstrap ) </li>
-                        <li> working on making desins using UI UX </li>
-                        <li>working on making a market website using javaScript Jquery </li>
-                    </ul>
-                    <a href="#">Read more </a>
-                </div>
-                <div class="column right">
-                    <div class="bars">
-                        <div class="info">
-                            <span>HTML</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="line html"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>JavaScript</span>
-                            <span>60%</span>
-                        </div>
-                        <div class="line css"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>CSS</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="line js"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>Angular</span>
-                            <span>50%</span>
-                        </div>
-                        <div class="line php"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>Bootstrap & Jquery</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="line mysql"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-<!--      information  section        -->
 
-    <section class="information" id="information">
-        <div class="max-width">
-            <h2 class="title">information</h2>
-            <p> " touch the image to get the informations " </p>
-            <div class="image-container">
-                <div class="box-image">
-                    <img src="image/engineer.jpg" alt="">
-                    <div class="text">
-                        <h3>Engineer</h3>
-                        <p> Graduated from faculty of engineering  </p>
-                    </div>
-                </div>
-                <div class="box-image">
-                    <img src="image/team.jpg" alt="">
-                    <div class="text">
-                        <h3>Handball Player</h3>
-                        <p> in Elshams Club </p>
-                    </div>
-                </div>
-                <div class="box-image">
-                    <img src="image/33.jpg" alt="">
-                    <div class="text">
-                        <h3> Photoshop Designer </h3>
-                        <p> i love working on photoshop </p>
-                    </div>
-                </div>
-                <div class="box-image">
-                    <img src="image/dreams.jpg" alt="">
-                    <div class="text">
-                        <h3>Dreams </h3>
-                        <p>to be a professional front end developer</p>
-                    </div>
-                </div>
-                <div class="box-image">
-                    <img src="image/works.jpg" alt="">
-                    <div class="text">
-                        <h3>works</h3>
-                        <p>as afreelancer in some companies <br> full time in engineering company </p>
-                    </div>
-                </div>
-                <div class="box-image">
-                    <img src="image/team-work.jpg" alt="">
-                    <div class="text">
-                        <h3>Team work</h3>
-                        <p>i like working in a team </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- contact section  -->
-    <Section class="contact" id="contact" >
-        <div class="max-width">
-            <h2 class="title">contact me </h2>
-            <div class="contact-content">
-                <div class="column left">
-                    <div class="text">get in touch</div>
-                    <p>Thank you for watching my cv and i hope to contact soon </p>
-                    <div class="icons">
-                        <div class="row">
-                            <i class="fas fa-user"></i>
-                            <div class="info">
-                                <div class="head">name</div>
-                                <div class="sub-title">ahmed tarek</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="info">
-                                <div class="head">adress</div>
-                                <div class="sub-title">egypt</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <i class="fas fa-envelope"></i>
-                            <div class="info">
-                                <div class="head">Email</div>
-                                <div class="sub-title">ahmedrakha285@gmail.com</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column right">
-                    <div class="text">message me </div>
-                    <form action="">
-                        <div class="fields">
-                            <div class="field name">
-                                <input type="text" placeholder="name">
-                            </div>
-                            <div class="field email">
-                                <input type="email" placeholder="email">
-                            </div>
-                        </div>
-                        <div class="field ">
-                            <input type="text" placeholder="subject">
-                        </div>
-                        <div class="field textarea">
-                            <textarea  cols="30" rows="10" placeholder="Descripe project.." required ></textarea>
-                        </div>
-                        <div class="button">
-                            <button type="submit" > send message </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </Section>
-    <!-- footer section  -->
-    <footer>
-        <span>created by <a href="#">Ahmed Tarek</a> | <span class="far fa-copyRight"></span>2020 all right reserved</span>
-    </footer>
-<script src="profile.js"></script>
-</body>
-</html>
+
+/* media quiry style */
+@media (max-width: 1300px) {
+  .home .max-width {
+    margin-left: 0px;
+  }
+  .information .image-container .box-image { 
+    flex-basis: 33.3% ;
+  }
+}
+@media (max-width: 1104px) {
+  .about .about-content .left img {
+    height: 350px;
+    width: 350px;
+  }
+}
+@media (max-width: 991px) {
+  .max-width {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 947px) {
+  section { 
+    width: 100% ;
+  }
+  .menu-btn {
+    display: block;
+    z-index: 999;
+    transition: 0.3s;
+  }
+  .navbar .menu {
+    position: fixed;
+    background-color: rgb(17 17 17 / 73%);
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 80px;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .navbar .menu.active {
+    left: 0;
+  }
+
+  .navbar .menu li {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .navbar .menu li a {
+    display: inline-block;
+    font-size: 25px;
+    margin: 20px 0;
+  }
+  .menu-btn.open {
+    color: var(--main-color);
+    font-size: 50px;
+  }
+  .home { 
+    width: 100% ;
+  }
+  .home .max-width .home-content .text-2 {
+    font-size: 70px;
+  }
+  .home .max-width .home-content .text-3 {
+    font-size: 35px;
+  }
+  .max-width {
+    max-width: 800px;
+  }
+  .about .about-content .column {
+    width: 100%;
+  }
+  .about .about-content .left {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px;
+  }
+  .about .about-content .right {
+    flex: 100%;
+  }
+  .services .serv-content .card { 
+    width: calc(50%-10px);
+    margin-bottom: 20px ;
+  }
+  .skills .skills-content .column,
+  .contact .contact-content .column { 
+    width: 100% ;
+    margin-bottom: 35px ;
+}
+  .information .image-container .box-image { 
+    flex-basis: 100% ;
+}
+.information { 
+  margin-right: 50px ;
+  width: 100% ;
+} 
+.information .image-container .box-image { 
+  max-width: 300px;
+  height: 315px;
+}
+
+
+
+
+}
+@media (max-width: 690px) {
+  .max-width {
+    padding: 0 23px;
+  }
+
+  .home .max-width .home-content .text-2 {
+    font-size: 60px;
+  }
+  .home .max-width .home-content .text-3 {
+    font-size: 32px;
+  }
+  .about .about-content .left img {
+    height: 200px;
+    width: 200px;
+}
+  .services .serv-content .card { 
+    width: 100% ;
+  }  
+  .scroll-up-btn { 
+    height: 30px;
+    width: 35px ;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .navbar .logo a {
+    font-size: 25px;
+  }
+  .navbar .menu li a {
+    display: block;
+    color: var(--second-color);
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 20px;
+    text-transform: capitalize;
+    transition: 0.3s;
+  }
+  
+
+  .home .max-width .home-content .text-2 {
+    font-size: 50px;
+  }
+  .home .max-width .home-content .text-3 {
+    font-size: 27px;
+  }
+  .home .max-width .home-content a {
+    font-size: 20px;
+    padding: 9px 25px;
+  }
+  .home { 
+    width: 100% ;
+  }
+  footer span { 
+    font-size: 11px;
+  }
+
+}
+
+@media (max-width: 350px) {
+
+  .navbar {
+    width: 100%;
+  }
+    .navbar .logo a {
+    font-size: 15px;
+  }
+  .navbar.active {
+    background-color: var(--main-color);
+    padding: 10px 0;
+}
+
+
+
+  .menu-btn {
+  font-size: 13px;
+}
+.about .about-content .right .text, 
+.skills .skills-content .left .text{
+  font-size: 16px;
+  margin-bottom: 21px;
+  text-align: center;
+}
+.about .about-content .right  p {
+  font-size: 14px;
+}
+.about .about-content .right a, 
+.skills .skills-content .left a,
+.contact .right form .button button {
+  font-size: 10px;
+  padding: 5px 10px;
+}
+.skills .skills-content .left li {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.contact .contact-content .left .text,
+.contact .contact-content .right .text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.contact .contact-content .left p {
+  text-align: justify;
+  font-size: 8px;
+}
+.contact .contact-content .left .info {
+  margin-left: 16px;
+  font-size: 10px;
+}
+.contact .right form .button button {
+  height: 81%;
+  width: 60%;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.contact .right form .field input, .contact .right form .textarea textarea {
+  height: 79%;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  outline: none;
+  padding: 0 11px;
+  font-size: 10px;
+  font-family: 'poppins', sans-serif;
+}
+.information .image-container .box-image {
+  height: 205px;
+}
+.information .image-container .box-image .text p {
+  font-size: 7px;
+}
+.information .image-container .box-image .text h3 {
+  font-size: 10px;
+}
+.scroll-up-btn {
+  height: 20px;
+  width: 20px;
+  font-size: 13px;
+  line-height: 22px;
+  right: 13px;
+}
+
+
+
+
+
+
+
+footer span {
+  font-size: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.navbar .menu li a {
+  display: block;
+  color: var(--second-color);
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 20px;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+section .title {
+  font-size: 30px;
+}
+section .title::before {
+  width: 140px;
+}
+section .title::after {
+  font-size: 14px;
+}
+.menu-btn.open {
+  font-size: 20px;
+}
+.navbar .menu {
+  position: fixed;
+  background-color: rgb(17 17 17 / 93%);
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+
+
+
+
+
+.home .max-width .home-content .text-1 { 
+  font-size: 15px;
+
+}
+.home .max-width .home-content .text-2 {
+  font-size: 25px;
+}
+.home .max-width .home-content .text-3 {
+  font-size: 15px;
+}
+.home .max-width .home-content a {
+  font-size: 10px;
+  padding: 5px 15px;
+}
+
+
+}
+
