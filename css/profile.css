@@ -779,6 +779,160 @@ footer span a:hover {
 
 }
 
+@media (max-width: 400px) {
+
+  .navbar {
+    width: 100%;
+  }
+    .navbar .logo a {
+    font-size: 15px;
+  }
+  .navbar.active {
+    background-color: var(--main-color);
+    padding: 10px 0;
+}
+
+
+
+  .menu-btn {
+  font-size: 13px;
+}
+
+
+.navbar .menu li a {
+  display: block;
+  color: var(--second-color);
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 20px;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+section .title {
+  font-size: 30px;
+}
+section .title::before {
+  width: 140px;
+}
+section .title::after {
+  font-size: 14px;
+}
+.menu-btn.open {
+  font-size: 20px;
+}
+.navbar .menu {
+  position: fixed;
+  background-color: rgb(17 17 17 / 93%);
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.home .max-width .home-content .text-1 { 
+  font-size: 15px;
+
+}
+.home .max-width .home-content .text-2 {
+  font-size: 25px;
+}
+.home .max-width .home-content .text-3 {
+  font-size: 15px;
+}
+.home .max-width .home-content a {
+  font-size: 10px;
+  padding: 5px 15px;
+}
+
+
+
+.about .about-content .right .text, 
+.skills .skills-content .left .text{
+  font-size: 16px;
+  margin-bottom: 21px;
+  text-align: center;
+}
+.about .about-content .right  p {
+  font-size: 14px;
+}
+.about .about-content .right a, 
+.skills .skills-content .left a,
+.contact .right form .button button {
+  font-size: 10px;
+  padding: 5px 10px;
+}
+.skills .skills-content .left li {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.contact .contact-content .left .text,
+.contact .contact-content .right .text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.contact .contact-content .left p {
+  text-align: justify;
+  font-size: 8px;
+}
+.contact .contact-content .left .info {
+  margin-left: 16px;
+  font-size: 10px;
+}
+.contact .right form .button button {
+  height: 81%;
+  width: 60%;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.contact .right form .field input, .contact .right form .textarea textarea {
+  height: 79%;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  outline: none;
+  padding: 0 11px;
+  font-size: 10px;
+  font-family: 'poppins', sans-serif;
+}
+.information .image-container .box-image {
+  height: 200px;
+  max-width: 193px;
+
+}
+.information .image-container .box-image .text p {
+  font-size: 7px;
+}
+.information .image-container .box-image .text h3 {
+  font-size: 10px;
+}
+.scroll-up-btn {
+  height: 20px;
+  width: 20px;
+  font-size: 13px;
+  line-height: 22px;
+  right: 13px;
+}
+.services .serv-content .card i {
+  font-size: 20px;
+}
+.services .serv-content .card .text {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.services .serv-content .card p,
+.services .serv-content .card li { 
+  font-size: 10px;
+}
+
+footer span {
+  font-size: 8px;
+}
+}
 @media (max-width: 350px) {
 
   .navbar {
@@ -797,6 +951,58 @@ footer span a:hover {
   .menu-btn {
   font-size: 13px;
 }
+
+
+.navbar .menu li a {
+  display: block;
+  color: var(--second-color);
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 20px;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+section .title {
+  font-size: 30px;
+}
+section .title::before {
+  width: 140px;
+}
+section .title::after {
+  font-size: 14px;
+}
+.menu-btn.open {
+  font-size: 20px;
+}
+.navbar .menu {
+  position: fixed;
+  background-color: rgb(17 17 17 / 93%);
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.home .max-width .home-content .text-1 { 
+  font-size: 15px;
+
+}
+.home .max-width .home-content .text-2 {
+  font-size: 25px;
+}
+.home .max-width .home-content .text-3 {
+  font-size: 15px;
+}
+.home .max-width .home-content a {
+  font-size: 10px;
+  padding: 5px 15px;
+}
+
+
+
 .about .about-content .right .text, 
 .skills .skills-content .left .text{
   font-size: 16px;
@@ -875,80 +1081,7 @@ footer span a:hover {
   font-size: 10px;
 }
 
-
-
-
-
-
-
-
-
 footer span {
   font-size: 8px;
 }
-
-
-
-
-
-
-
-
-
-
-
-.navbar .menu li a {
-  display: block;
-  color: var(--second-color);
-  font-size: 18px;
-  font-weight: 500;
-  margin-left: 20px;
-  text-transform: capitalize;
-  transition: 0.3s;
-}
-section .title {
-  font-size: 30px;
-}
-section .title::before {
-  width: 140px;
-}
-section .title::after {
-  font-size: 14px;
-}
-.menu-btn.open {
-  font-size: 20px;
-}
-.navbar .menu {
-  position: fixed;
-  background-color: rgb(17 17 17 / 93%);
-  left: -100%;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  padding-top: 80px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-
-
-
-
-
-.home .max-width .home-content .text-1 { 
-  font-size: 15px;
-
-}
-.home .max-width .home-content .text-2 {
-  font-size: 25px;
-}
-.home .max-width .home-content .text-3 {
-  font-size: 15px;
-}
-.home .max-width .home-content a {
-  font-size: 10px;
-  padding: 5px 15px;
-}
-
-
 }
